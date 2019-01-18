@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss'; // main utilities, grid and stuff
+import {viewpanel} from './Components/styles/App.module.scss';
+import {NetsciBarResponsive} from "./Components/NetsciBar";
+import {randomData, getColors} from './dataGen'
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    constructor(){
+        super();
+        this.state = {
+            data: []
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(){
+        this.setState({
+            data: randomData(5)
+        })
+    }
+
+    render() {
+        const {data} = this.state;
+        return (
+           <section className="hero is-fullheight">
+            <div className="hero-body">
+                <div className={viewpanel}>
+                    <NetsciBarResponsive data={data} getColors={getColors}/>
+                </div>
+                <button onClick={this.handleClick}>Roll</button>
+            </div>
+           </section>
+        );
+    }
 }
+
 
 export default App;
