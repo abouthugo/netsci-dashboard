@@ -10,14 +10,13 @@ class App extends Component {
         this.state = {
             data: []
         };
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(){
+    handleClick = () => {
         this.setState({
             data: randomData(5)
         })
-    }
+    };
 
     render() {
         const {data} = this.state;

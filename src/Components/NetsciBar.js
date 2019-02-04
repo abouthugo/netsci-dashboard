@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Bar, ResponsiveBar } from '@nivo/bar';
-import { legend, axisBottom } from './configs/basic';
+import { legend, axisBottom } from '../nivo.utils/configs/basic';
 import {ha} from './styles/NetsciBar.module.scss';
 const NetsciBar = ({data, getColors}) => (
     <Bar
