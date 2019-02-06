@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.scss'; // main utilities, grid and stuff
-import {viewpanel} from './Components/styles/App.module.scss';
-import {NetsciBarResponsive} from "./Components/NetsciBar";
-import {randomData, getColors} from './dataGen'
-class App extends Component {
+import Wrapper from './Components/Layouts/Wrapper';
+import SidePanel from './Components/Layouts/SidePanel';
+import DashboardPanel from './Components/Layouts/DashboardPanel';
+import NavButton from './Components/NavButton';
+import DashboardCardsGrid from './Components/Layouts/DashboardCardsGrid';
+import DashboardCard from './Components/Layouts/DashboardCard';
+import BarChart from "./Components/BarChart";
+const App = () => (
+        <Wrapper>
+            <SidePanel>
+                   <NavButton href="/">Hey!</NavButton>
+                   <NavButton href="/">Hey!</NavButton>
+            </SidePanel>
+            <DashboardPanel>
+                <DashboardCardsGrid>
+                    <DashboardCard row="1/4">
+                        <BarChart x={3} />
+                    </DashboardCard>
+                    <DashboardCard row="4/6">
+                        <BarChart x={2} />
+                    </DashboardCard>
+                    <DashboardCard column="2/6" row="1/4">
+                        <BarChart x={20} />
+                    </DashboardCard>
+                    <DashboardCard column="2/6" row="4/6">
+                        <BarChart x={12} />
+                    </DashboardCard>
+                </DashboardCardsGrid>
+            </DashboardPanel>
+        </Wrapper>
+);
 
-    constructor(){
-        super();
-        this.state = {
-            data: []
-        };
-    }
-
-    handleClick = () => {
-        this.setState({
-            data: randomData(5)
-        })
-    };
-
-    render() {
-        const {data} = this.state;
-        return (
-           <section className="hero is-fullheight">
-            <div className="hero-body">
-                <div className={viewpanel}>
-                    <NetsciBarResponsive data={data} getColors={getColors}/>
-                </div>
-                <button onClick={this.handleClick}>Roll</button>
-            </div>
-           </section>
-        );
-    }
-}
 
 
 export default App;
