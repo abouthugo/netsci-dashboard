@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { Bar, ResponsiveBar } from '@nivo/bar';
 import { legend, axisBottom } from '../nivo.utils/configs/basic';
-import {ha} from './styles/NetsciBar.module.scss';
 const NetsciBar = ({data, getColors}) => (
     <Bar
         width={900}
@@ -39,7 +38,6 @@ NetsciBar.propTypes = {
 
 const NetsciBarResponsive = ({data, getColors}) => (
     <ResponsiveBar
-        stylename={ha}
         margin={{
             top: 60,
             right: 80,
