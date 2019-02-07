@@ -7,6 +7,9 @@ import NavButton from './Components/NavButton';
 import DashboardCardsGrid from './Components/Layouts/DashboardCardsGrid';
 import DashboardCard from './Components/Layouts/DashboardCard';
 import BarChart from "./Components/BarChart";
+import LineChart from "./Components/LineChart";
+import PieChart from "./Components/PieChart";
+
 const App = () => (
         <Wrapper>
             <SidePanel>
@@ -16,7 +19,7 @@ const App = () => (
             <DashboardPanel>
                 <DashboardCardsGrid>
                     <DashboardCard row="1/4">
-                        <BarChart x={3} />
+                        <PieChart/>
                     </DashboardCard>
                     <DashboardCard row="4/6">
                         <BarChart x={2} />
@@ -25,7 +28,7 @@ const App = () => (
                         <BarChart x={20} />
                     </DashboardCard>
                     <DashboardCard column="2/6" row="4/6">
-                        <BarChart x={12} />
+                        <LineChart />
                     </DashboardCard>
                 </DashboardCardsGrid>
             </DashboardPanel>
