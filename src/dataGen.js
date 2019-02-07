@@ -14,7 +14,7 @@ module.exports = {
     },
     getColors: ({id}) => {
         if(id === "profits"){
-            return "#90FCB5";
+            return "#418DE6";
         }else {
             return "#E65575";
         }

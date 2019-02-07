@@ -1,9 +1,9 @@
 import React from 'react';
-import {NetsciBarResponsive} from '../NetsciBar';
+import NetsciBar from '../NetsciBar';
 import {randomData, getColors} from '../../dataGen';
 
 const BarChart =  ({x}) => (
-    <NetsciBarResponsive data={randomData(x)} getColors={getColors}/>
+    <NetsciBar data={randomData(x)} getColors={getColors}/>
 );
 
 export default BarChart;
