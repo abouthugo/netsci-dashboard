@@ -18,16 +18,16 @@ const App = () => (
             </SidePanel>
             <DashboardPanel>
                 <DashboardCardsGrid>
-                    <DashboardCard row="1/4">
+                    <DashboardCard column="1/3" row="1/7">
                         <PieChart/>
                     </DashboardCard>
-                    <DashboardCard row="4/6">
+                    <DashboardCard column="1/3" row="7/11">
                         <BarChart x={2} />
                     </DashboardCard>
-                    <DashboardCard column="2/6" row="1/4">
+                    <DashboardCard column="3/11" row="1/7">
                         <BarChart x={20} />
                     </DashboardCard>
-                    <DashboardCard column="2/6" row="4/6">
+                    <DashboardCard column="3/11" row="7/11">
                         <LineChart />
                     </DashboardCard>
                 </DashboardCardsGrid>
