@@ -6,6 +6,7 @@ const SidePanel = styled.section`
   background: #FFFFFF;
   border-right: 1px solid #E5E9F2;
   grid-area: side;
+  align-content: center;
   justify-content: center;
 `;
 
