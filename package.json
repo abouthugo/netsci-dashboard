@@ -6,6 +6,7 @@
     "@nivo/bar": "^0.52.0",
     "@nivo/line": "^0.52.1",
     "@nivo/pie": "^0.52.1",
+    "@nivo/radar": "^0.52.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

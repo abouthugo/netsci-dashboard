@@ -9,6 +9,7 @@ import DashboardCard from './Components/Layouts/DashboardCard';
 import BarChart from "./Components/BarChart";
 import LineChart from "./Components/LineChart";
 import PieChart from "./Components/PieChart";
+import RadarChart from "./Components/RadarChart";
 
 const App = () => (
         <Wrapper>
@@ -22,7 +23,7 @@ const App = () => (
                         <PieChart/>
                     </DashboardCard>
                     <DashboardCard column="1/3" row="7/11">
-                        <BarChart x={2} />
+                        <RadarChart />
                     </DashboardCard>
                     <DashboardCard column="3/11" row="1/7">
                         <BarChart x={20} />
