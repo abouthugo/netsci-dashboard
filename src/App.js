@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss'; // main utilities, grid and stuff
+import './App.scss'; // Google Font
 import Wrapper from './Components/Layouts/Wrapper';
 import SidePanel from './Components/Layouts/SidePanel';
 import DashboardPanel from './Components/Layouts/DashboardPanel';
