@@ -7,8 +7,8 @@ const DashboardCard = styled.div`
   border: 1px solid #E5E9F2;
   border-radius: 5px;
   text-align: center;
-  max-height: 98%;
-  max-width: 98%;
+  max-height: 95%;
+  max-width: 100%;
   justify-items: center;
   padding-right: 20px;
 `;

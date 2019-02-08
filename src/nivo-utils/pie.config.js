@@ -99,7 +99,7 @@ exports.fill = [
 exports.legends = [{
     "anchor": "bottom",
     "direction": "column",
-    "translateY": 56,
+    "translateY": 70,
     "itemWidth": 50,
     "itemHeight": 20,
     "itemTextColor": "#999",
