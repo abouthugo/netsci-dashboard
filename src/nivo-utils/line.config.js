@@ -1,6 +1,6 @@
 exports.margin = {
     "top": 50,
-    "right": 110,
+    "right": 140,
     "bottom": 50,
     "left": 60
 };
