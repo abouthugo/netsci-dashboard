@@ -19,18 +19,23 @@ const App = () => (
             </SidePanel>
             <DashboardPanel>
                 <DashboardCardsGrid>
+
                     <DashboardCard column="1/3" row="1/7">
                         <PieChart/>
                     </DashboardCard>
-                    <DashboardCard column="1/3" row="7/11">
-                        <RadarChart />
-                    </DashboardCard>
+
                     <DashboardCard column="3/11" row="1/7">
                         <BarChart x={20} />
                     </DashboardCard>
-                    <DashboardCard column="3/11" row="7/11">
+
+                    <DashboardCard column="1/4" row="7/11">
+                        <RadarChart />
+                    </DashboardCard>
+
+                    <DashboardCard column="4/11" row="7/11">
                         <LineChart />
                     </DashboardCard>
+
                 </DashboardCardsGrid>
             </DashboardPanel>
         </Wrapper>
