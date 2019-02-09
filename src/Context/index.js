@@ -48,6 +48,15 @@ class DataProvider extends Component {
         })
     };
 
+    buildCharts = () => {
+        this.setState({
+            pie: helper.pieData(["sass", "scss", "css"]),
+            line: helper.lineData(["run", "jog", "walk"], 7),
+            bar: helper.barData(10),
+            radar: helper.radarData()
+        });
+    };
+
     render() {
         return (
             <DataContext.Provider
@@ -56,7 +65,8 @@ class DataProvider extends Component {
                     randomPie: this.randomPie,
                     randomLine: this.randomLine,
                     randomBar: this.randomBar,
-                    randomRadar: this.randomRadar
+                    randomRadar: this.randomRadar,
+                    buildCharts: this.buildCharts
                 } }
             >
                 { this.props.children }
