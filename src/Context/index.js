@@ -1,22 +1,68 @@
 import React, { Component } from 'react';
 
+import * as helper  from '../data-helpers';
+
 const DataContext = React.createContext();
 
-class DataProvider extends Component{
-    constructor(){
+class DataProvider extends Component {
+    constructor() {
         super();
         this.state = {
-            data: []
+            pie: [],
+            line: [],
+            bar: [],
+            radar: []
         };
     }
 
-    render(){
-        return(
-            <DataContext.Provider value={{state: this.state}}>
-                {this.props.children}
-            </DataContext.Provider>
-        )
+    componentDidMount() {
+        this.setState({
+            pie: helper.pieData(["sass", "scss", "css"]),
+            line: helper.lineData(["run", "jog", "walk"], 7),
+            bar: helper.barData(10),
+            radar: helper.radarData()
+        });
     }
-};
 
-export {DataContext, DataProvider};
+    randomPie = () => {
+        this.setState({
+            pie: helper.pieData(["sass", "scss", "css"])
+        });
+    };
+
+    randomLine = () => {
+        this.setState({
+            line: helper.lineData(["run", "jog", "walk"], 7)
+        });
+    };
+
+    randomBar = () => {
+        this.setState({
+            bar: helper.barData(10)
+        });
+    };
+
+    randomRadar = () => {
+        this.setState({
+            radar: helper.radarData()
+        })
+    };
+
+    render() {
+        return (
+            <DataContext.Provider
+                value={ {
+                    state: this.state,
+                    randomPie: this.randomPie,
+                    randomLine: this.randomLine,
+                    randomBar: this.randomBar,
+                    randomRadar: this.randomRadar
+                } }
+            >
+                { this.props.children }
+            </DataContext.Provider>
+        );
+    }
+}
+
+export { DataContext, DataProvider };
