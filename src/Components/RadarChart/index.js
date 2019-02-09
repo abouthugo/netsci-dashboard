@@ -1,9 +1,11 @@
 import React from 'react';
-import { data } from '../../nivo-utils/radar.sample-data';
 import NetsciRadar from "./NetsciRadar";
+import { DataContext } from '../../Context';
 
 const RadarChart = () => (
-    <NetsciRadar data={data}/>
+    <DataContext.Consumer>
+        {context => <NetsciRadar data={context.state.radar}/>}
+    </DataContext.Consumer>
 );
 
 export default RadarChart;

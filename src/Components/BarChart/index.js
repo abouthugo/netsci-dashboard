@@ -1,9 +1,11 @@
 import React from 'react';
-import NetsciBar from '../NetsciBar';
-import {randomData, getColors} from '../../dataGen';
+import NetsciBar from './NetsciBar';
+import { DataContext } from '../../Context';
 
-const BarChart =  ({x}) => (
-    <NetsciBar data={randomData(x)} getColors={getColors}/>
+const BarChart =  () => (
+    <DataContext.Consumer>
+        {context => <NetsciBar data={context.state.bar} />}
+    </DataContext.Consumer>
 );
 
 export default BarChart;

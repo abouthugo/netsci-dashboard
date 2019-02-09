@@ -1,8 +1,12 @@
 import React from 'react';
 import NetsciLine from "./NetsciLine";
-import {produceData} from '../../nivo-utils/line.sample-data';
-const LineChart = () => (
-    <NetsciLine data={produceData()}/>
-);
+import { DataContext } from '../../Context';
 
+const LineChart = () => (
+    <DataContext.Consumer>
+        {context =>
+            <NetsciLine data={ context.state.line }/>
+        }
+    </DataContext.Consumer>
+);
 export default LineChart;
