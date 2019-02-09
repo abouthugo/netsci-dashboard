@@ -23,7 +23,7 @@ exports.axisBottom={
     "tickSize": 5,
     "tickPadding": 5,
     "tickRotation": 0,
-    "legend": "Hits", // TODO: Change this to reflect the real legend
+    "legend": "Day of the week", // TODO: Change this to reflect the real legend
     "legendOffset": 36,
     "legendPosition": "middle"
 };
@@ -33,7 +33,7 @@ exports.axisLeft={
     "tickSize": 5,
     "tickPadding": 5,
     "tickRotation": 0,
-    "legend": "count",
+    "legend": "Kilometers",
     "legendOffset": -40,
     "legendPosition": "middle"
 };

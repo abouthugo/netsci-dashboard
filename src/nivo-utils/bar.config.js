@@ -18,6 +18,11 @@ exports.legends = [{
     }]
 }];
 
+exports.colorBy = ({id}) => {
+    if(id === "profits") return "#418DE6";
+    else return "#E65575";
+};
+
 exports.axisBottom = {
     "tickSize": 5,
     "tickPadding": 5,

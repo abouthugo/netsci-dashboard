@@ -1,5 +1,5 @@
-exports.keys = ["chardonay", "carmenere", "syrah"];
-exports.indexBy = "taste";
+exports.keys = ["player 1", "player 2"];
+exports.indexBy = "skill";
 exports.maxValue = "auto";
 exports.margin = {
     "top": 70,
