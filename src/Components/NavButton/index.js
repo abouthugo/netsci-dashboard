@@ -7,6 +7,14 @@ const NavButton = styled.button`
   //align-self: center;
   padding: 5px 20px;
   margin: 10px 5px;
+  &:hover{
+    background: greenyellow;
+  }
+  &:focus{
+    outline: none;
+    background: greenyellow;
+    border: 1px solid greenyellow;
+  }
 `;
 
 export default NavButton;
