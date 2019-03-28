@@ -22,6 +22,12 @@ class DataProvider extends Component {
             bar: helper.barData(10),
             radar: helper.radarData()
         });
+
+
+	fetch("/api/corpora_metrics")
+	.then(res => res.json())
+	.then(data => console.log(data))
+	.catch(err => console.log(err));
     }
 
     randomPie = () => {
