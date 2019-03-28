@@ -4,6 +4,7 @@ import * as helper  from '../data-helpers';
 import * as transformer from '../utils/dataTransformer'
 
 const DataContext = React.createContext();
+const URL = "http://netsci.montclair.edu:5000";
 
 class DataProvider extends Component {
     constructor() {
@@ -18,19 +19,24 @@ class DataProvider extends Component {
 
     componentDidMount() {
 
-        fetch("/api/corpora_metrics")
+        fetch(`${URL}/corpora_metrics`)
             .then(res => res.json())
             .then(data => {
+                delete data["freeweibo_topic_count"]
+                console.log(data);
+                console.log(typeof data);
                 let pieData = transformer.pie(data),
                 lineData = helper.lineData(["run", "jog", "walk"], 7),
                 barData = helper.barData(10),
                 radarData = helper.radarData();
+                console.log(pieData);
                 this.updateState(pieData, lineData, barData, radarData);
             })
             .catch(err => console.log(err));
     }
 
-    updateState({pie, line, bar, radar}) {
+    updateState = (pie, line, bar, radar) => {
+        console.log("Checkpoint, component mounted update state called")
         this.setState({
             pie,
             line,
