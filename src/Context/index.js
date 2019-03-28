@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import * as helper  from '../data-helpers';
+import * as transformer from '../utils/dataTransformer'
 
 const DataContext = React.createContext();
 
@@ -16,18 +17,26 @@ class DataProvider extends Component {
     }
 
     componentDidMount() {
+
+        fetch("/api/corpora_metrics")
+            .then(res => res.json())
+            .then(data => {
+                let pieData = transformer.pie(data),
+                lineData = helper.lineData(["run", "jog", "walk"], 7),
+                barData = helper.barData(10),
+                radarData = helper.radarData();
+                this.updateState(pieData, lineData, barData, radarData);
+            })
+            .catch(err => console.log(err));
+    }
+
+    updateState({pie, line, bar, radar}) {
         this.setState({
-            pie: helper.pieData(["sass", "scss", "css"]),
-            line: helper.lineData(["run", "jog", "walk"], 7),
-            bar: helper.barData(10),
-            radar: helper.radarData()
-        });
-
-
-	fetch("/api/corpora_metrics")
-	.then(res => res.json())
-	.then(data => console.log(data))
-	.catch(err => console.log(err));
+            pie,
+            line,
+            bar,
+            radar
+        })
     }
 
     randomPie = () => {
