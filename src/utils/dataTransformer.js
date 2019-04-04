@@ -3,15 +3,15 @@
  * @returns {[{}]} a transformed version of the input object that the PieChart
  * component can read
  */
-exports.pie = data => {
+exports.metrics_to_pie = metrics => {
   // Data comes in the form:
   // {"label": value}
   let pieData = []
-  for (let piece in data) {
+  for (let item in metrics) {
     pieData.push({
-      id: piece,
-      label: exports.normalizeName(piece),
-      value: data[piece]
+      id: exports.normalizeName(item),
+      label: exports.normalizeName(item),
+      value: metrics[item]
       // Color property ommited but can be modified
       // you will need to modify the pie.config.js file as well
       // color: convertToColor(id)
@@ -28,6 +28,6 @@ exports.pie = data => {
  * @returns {String} a string separated by spaced instead of "_"
  */
 exports.normalizeName = name => {
-  let reg = /\_/gi
+  let reg = /_/gi
   return name.replace(reg, ' ')
 }
