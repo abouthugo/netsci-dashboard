@@ -3,11 +3,11 @@ exports.legends = [{
     "anchor": "bottom-right",
     "direction": "column",
     "justify": false,
-    "translateX": 120,
+    "translateX": 155,
     "translateY": 0,
     "itemsSpacing": 2,
     "itemWidth": 160,
-    "itemHeight": 20,
+    "itemHeight": 30,
     "itemDirection": "left-to-right",
     "itemOpacity": 0.85,
     "symbolSize": 20,
@@ -30,6 +30,12 @@ exports.axisBottom = {
     "legend": "Database Record Count",
     "legendPosition": "middle",
     "legendOffset": 52
+};
+
+exports.axisLeft = {
+    "legend": "Count",
+    "legendPosition": "middle",
+    "legendOffset": -58
 };
 
 exports.margin = {

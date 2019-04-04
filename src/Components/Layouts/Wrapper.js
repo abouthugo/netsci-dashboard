@@ -4,8 +4,9 @@ const Wrapper = styled.div`
   display: grid;
   margin: 0;
   padding: 0;
+  grid-template-columns: 2fr 20fr;
   grid-template-areas: 
-  "side dash dash dash dash dash dash dash dash dash dash dash" ;
+  "side dash" ;
   grid-gap: 10px 10px;
   background: #F5F6FA;
   min-height: 99vh;
