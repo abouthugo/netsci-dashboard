@@ -92,10 +92,10 @@ const yoloFetch = async (sampleSize, updateState) => {
     novayaPromise,
     weiboPromise
   ])
-  console.log(novaya)
+  delete metrics["freeweibo_topic_count"]
   const pieData = transformer.metrics_to_pie(metrics)
   const lineData = helper.lineData(['run', 'jog', 'walk'], 7)
-  const barData = helper.barData(10)
+  const barData = transformer.metrics_to_bar(metrics);
   const radarData = helper.radarData()
   updateState(pieData, lineData, barData, radarData)
 }

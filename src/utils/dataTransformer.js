@@ -31,3 +31,19 @@ exports.normalizeName = name => {
   let reg = /_/gi
   return name.replace(reg, ' ')
 }
+
+exports.metrics_to_bar = metrics => {
+  let barData = [];
+  let i = 0;
+  for(let item in metrics){
+    let id = item.split("_")[0];
+    barData.push({
+      provider: id
+    })
+    
+    barData[i][id] = metrics[item];
+    i++;
+  }
+  return barData;
+
+}
